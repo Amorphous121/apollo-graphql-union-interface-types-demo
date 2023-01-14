@@ -1,0 +1,32 @@
+interface Result {
+  degree: String
+}
+
+union Data = Book | Author
+
+type Query {
+  getData: [Data]
+  getResults: [Result!]!
+}
+
+type Author {
+  id: ID
+  name: String
+}
+
+type Book {
+  id: ID
+  publication: String
+}
+
+type CollegeDegree implements Result {
+  id: ID
+  degree: String
+  cgpa: Float
+}
+
+type SchoolMarksheet implements Result{
+  id: ID
+  degree: String
+  percentage: Float
+}
